@@ -20,10 +20,22 @@ void setup() {
 int prev = 0;
 unsigned long ptime = 0;
 
+int myabs(int x, int y)
+{
+  if(x>y)
+    return x-y;
+  return y-x;
+}
+
 void loop() {
   
   int key = 0;
   int val = analogRead(A0);
+  delay(51);
+  int prevval = analogRead(A0);
+  if(myabs(val,prevval) <= 8)
+  {
+  
   PACKAGE p;
   
   if(val >= 977)
@@ -60,7 +72,8 @@ void loop() {
     {
       Serial.print("Button ");
       Serial.print(key);
-      p.button = key;
+      Serial.print(val);  
+      p.button = key + 100;
       p.has = true;
       radio.write(&p, sizeof(p));
       ptime = millis();
@@ -74,4 +87,6 @@ void loop() {
     p.has = false;
     radio.write(&p, sizeof(p));
   }
+  }
+  prevval = val;
 }
