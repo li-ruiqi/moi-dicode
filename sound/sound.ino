@@ -145,7 +145,7 @@ void loop() {
     if(data.button > 100 && data.button < 107)
     {
       sendCommand(CMD_STOP_PLAY, 0);
-      sendCommand(CMD_PLAY, data.button - 101);
+      sendCommand(CMD_PLAY_W_INDEX, data.button - 100);
     }
     if(data.button == 112)
     {

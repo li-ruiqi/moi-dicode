@@ -38,10 +38,10 @@ void loop() {
     Serial.print("Key");
     Serial.print(p.button);
     Serial.println();
-    if(p.button == 12){
+    if(p.button == 11){
       digitalWrite(A4, 1);
     }
-    else if(p.button == 9){
+    else if(p.button == 8){
       digitalWrite(A4, 0);
     }
   }

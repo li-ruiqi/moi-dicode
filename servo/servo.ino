@@ -3,7 +3,7 @@
 #include <RF24.h>
 #include <Servo.h>
 
-#define SERVO_1_START 141
+#define SERVO_1_START 138
 #define SERVO_2_START 34
 #define SERVO_3_START 175
 #define SERVO_4_START 0
@@ -78,7 +78,7 @@ void loop() {
     Serial.print(p.button);
     Serial.println();
 
-    if(p.button == 3){
+    if(p.button == 107){
       servo_1.write(SERVO_1_END);
       delay(500);
       servo_2.write(SERVO_2_END);
@@ -87,7 +87,7 @@ void loop() {
       servo_4.write(SERVO_4_END);
       servo_5.write(SERVO_5_END);
     }
-    else if(p.button == 6){
+    else if(p.button == 108){
       servo_1.write(SERVO_1_START);
       delay(500);
       servo_2.write(SERVO_2_START);
